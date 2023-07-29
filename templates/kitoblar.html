@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Kitoblar{% endblock title %}
+{% block content %}
+
+<form action="{% url 'kitoblar' %}" method="GET" class="form mt-3 mb-3 ml-3 mr-3">
+    <div class="input-group input-group-lg">
+      <input name="sorov" type="text" value="{{query}}" placeholder="Qidirish..." class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    </div>
+</form>
+<h6 class="text-center text-primary">{{addition}}</h6>
+
+{% if not results  %}
+<h6 class="text-center text-primary" style="height: 80%;" >Hech narsa yoq</h6>
+{% endif  %}
+<div class="row mt-3 p-3">
+    {% for x in results %}
+    <div class="col-sm-6 col-md-3">
+      <div class="card text-center border-primary">
+        <img class="card-img-top" src="{{x.image.url}}" alt="Card image cap">
+        <div class="card-body p-0 bg-light">
+          <p class="card-title text- font-arial mb-0"><strong>{{x.nomi}}</strong></p>
+          <p class="card-text text-gray-dark mb-0"><i>{{x.muallif}}</i> </p>
+          <a href="{% url 'detail' x.slug %}" class="btn-link">Ko`proq</a>
+        </div>
+      </div>
+    </div>
+  
+    {% endfor %}
+    
+</div>
+{% endblock content %}

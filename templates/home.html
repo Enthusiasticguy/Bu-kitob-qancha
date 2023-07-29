@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Bosh sahifa{% endblock title %}
+{% block content %}
+
+<!-- Background image -->
+<div
+  class="bg-image mb-3"
+  style="
+  height: 100%;
+  background: linear-gradient(to right, #434343 0%, black 100%);;
+  "
+>
+  <div style="
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+      ">
+    <h1 class="text-white shadow text-center" style="padding-top: 10%;">Bu Kitob Qancha?</h1>
+    <p class="text-secondary text-center">Assalomu alaykum va rahmatullohi va barokatuh <br>
+      Bu kanalda hozirgi vaqtda koʻp sotilayotgan kitoblarni belgilab olingan kitob doʻkonlaridagi narxlari berib boriladi</p>
+  </div>
+</div>
+<!-- Background image -->
+<div class="jumbotron text-center">
+  <h2 class="">Kitoblarni qidirish va ko'rish uchun tugmani bosing!!</h1>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-outline-dark btn-lg" href="{% url 'kitoblar' %}" >Ko`rish</a>
+  </p>
+</div>
+
+
+
+
+{% endblock content %}
